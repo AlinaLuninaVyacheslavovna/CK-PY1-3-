@@ -1,14 +1,17 @@
 from random import randint
 
-start = -10
-stop = 10
-count = 15
 
+def get_unique_list_numbers(start=-10, stop=10, count=15) -> list[int]:
 
-def get_unique_list_numbers() -> list[int]:
-    random_digit = [randint(start, stop) for _ in range(count)]
-    unique_digit = set(random_digit)
-    return unique_digit
+    random_digit = [randint(start, stop)]
+
+    for digit in range(count):
+
+        if digit not in random_digit:
+            random_digit.append(digit)
+        else:
+            randint(start, stop)
+    return random_digit
 
 
 list_unique_numbers = get_unique_list_numbers()
